@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    
+	    int x = sc.nextInt();
+	    int y = sc.nextInt();
+	    
+	    int a, b;
+	    if (x > y) {
+	        a = x;
+	        b = y;
+	    } else {
+	        b = x;
+	        a = y;
+	    }
+	    
+	    int r = -1;
+	    while (r != 0) {
+	        r = a % b;
+	        if (r == 0) {
+	            System.out.println(b);
+	            break;
+	        }
+	        a = b;
+	        b = r;
+	    }
+	    
+	    r = b;
+		for (int i = 1; r <= x * y; i++) {
+		    if (((r * i) % x == 0) && ((r * i) % y == 0)) {
+	            System.out.println(r * i);
+		        break;
+		    }
+		}
+		
+		
+		sc.close();
+	}
+}
