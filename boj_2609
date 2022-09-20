@@ -31,12 +31,12 @@ public class Main
 	    }
 	    
 	    r = b;		// r = 두 수의 최대공약수 b
-		for (int i = 1; r <= x * y; i++) {
-		    if (((r * i) % x == 0) && ((r * i) % y == 0)) {		// r의 배수 중에서 x와 y 둘 다 나누어 떨어지는 r * i를 구한다
-	            System.out.println(r * i);
-		        break;
-		    }
+	    for (int i = 1; r <= x * y; i++) {
+		if (((r * i) % x == 0) && ((r * i) % y == 0)) {		// r의 배수 중에서 x와 y 둘 다 나누어 떨어지는 r * i를 구한다
+		    System.out.println(r * i);
+		    break;
 		}
+	    }
 		
 		
 		sc.close();
