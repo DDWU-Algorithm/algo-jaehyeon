@@ -30,16 +30,16 @@ public class Main
 	    }
 	    
 	    for (int n = 0; n < cases.size() - 1; n++) {
-    	    for (int i = 3; i < max; i++) {		// 3부터 max까지 홀수인 소수
-    	        if (decimal[i] == true) {
-    	            if (decimal[cases.get(n) - i] == true) {		// testcase - 홀수인 소수 = 소수일 때, 어차피 2의 배수는 제외되므로 둘 다 홀수 소수
-		                System.out.println(cases.get(n) + " = " + i + " + " + (cases.get(n) - i));		// 즉 testcase = 홀수 소수 + 홀수 소수
-    	                break;
-    	            }
-    	        }
-    	    }
+		    for (int i = 3; i < max; i++) {		// 3부터 max까지 홀수인 소수
+			if (decimal[i] == true) {
+			    if (decimal[cases.get(n) - i] == true) {		// testcase - 홀수인 소수 = 소수일 때, 어차피 2의 배수는 제외되므로 둘 다 홀수 소수
+				System.out.println(cases.get(n) + " = " + i + " + " + (cases.get(n) - i));		// 즉 testcase = 홀수 소수 + 홀수 소수
+				break;
+			    }
+			}
+		    }
 	    }
 		
-		sc.close();
+	sc.close();
 	}
 }
