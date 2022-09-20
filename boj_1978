@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    
+	    int n = sc.nextInt();
+	    
+	    int decimal = 0;
+		for (int i = 0; i < n; i++) {
+		    int num = sc.nextInt();
+		    if (num == 1) {
+		        continue;
+		    }
+		    
+		    int j = 0;
+		    for (j = 2; j < num; j++) {
+		        if (num % j == 0) {
+		            break;
+		        }
+		    }
+		    if (j == num) {
+		        decimal++;
+		    }
+		}
+		System.out.println(decimal);
+		
+		sc.close();
+	}
+}
