@@ -5,27 +5,25 @@ public class Main
 	public static void main(String[] args) {
 	    Scanner sc = new Scanner(System.in);
 	    
-	    int n = sc.nextInt();
+	    int M = sc.nextInt();
+	    int N = sc.nextInt();
 	    
-	    int decimal = 0;
-		for (int i = 0; i < n; i++) {
-		    int num = sc.nextInt();
-		    if (num == 1) {
-		        continue;
-		    }
-		    
-		    int j = 0;
-		    for (j = 2; j < num; j++) {
-		        if (num % j == 0) {
-		            break;
-		        }
-		    }
-		    if (j == num) {
-		        decimal++;
-		    }
-		}
-		System.out.println(decimal);
-		
+	    boolean[] decimal = new boolean[N + 1];
+	    Arrays.fill(decimal, true);
+	    decimal[1] = false;
+	    for (int i = 2; i <= N; i++) {
+	        if (decimal[i] == true) {
+    	        for (int j = 2; (i * j) <= N; j++) {
+    	            decimal[i * j] = false;
+    	        }
+	        }
+	    }
+	    for (int i = M; i <= N; i++) {
+	        if (decimal[i] == true) {
+		        System.out.println(i);
+	        }
+	    }
+	    
 		sc.close();
 	}
 }
