@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    
+	    ArrayList<Integer> cases = new ArrayList<Integer>();
+	    int max = 0;
+	    int input = -1;
+	    for (int i = 0; input != 0; i++) {
+	        input = sc.nextInt();
+	        cases.add(input);
+	        if (input > max) {
+	            max = input;
+	        }
+	    }
+	    
+	    boolean[] decimal = new boolean[max + 1];
+	    Arrays.fill(decimal, true);
+	    decimal[1] = false;
+	    for (int i = 2; i <= max; i++) {
+	        if (decimal[i] == true) {
+    	        for (int j = 2; (i * j) <= max; j++) {
+    	            decimal[i * j] = false;
+    	        }
+	        }
+	    }
+	    
+	    for (int n = 0; n < cases.size() - 1; n++) {
+    	    for (int i = 3; i < max; i++) {
+    	        if (decimal[i] == true) {
+    	            if (decimal[cases.get(n) - i] == true) {
+		                System.out.println(cases.get(n) + " = " + i + " + " + (cases.get(n) - i));
+    	                break;
+    	            }
+    	        }
+    	    }
+	    }
+		
+		sc.close();
+	}
+}
