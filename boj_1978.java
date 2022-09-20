@@ -9,11 +9,11 @@ public class Main
 	    
 	    int n = sc.nextInt();
 	    
-	    int decimal = 0;		// 소수의 개수
+	    int prime = 0;		// 소수의 개수
 		for (int i = 0; i < n; i++) {
 		    int num = sc.nextInt();
 		    if (num == 1) {		// 1은 소수가 아니므로 넘어간다.
-		        continue;
+		        continue;		// 없어도 되는 코드
 		    }
 		    
 		    int j = 0;
@@ -23,10 +23,10 @@ public class Main
 		        }
 		    }
 		    if (j == num) {
-		        decimal++;
+		        prime++;
 		    }
 		}
-		System.out.println(decimal);
+		System.out.println(prime);
 		
 		sc.close();
 	}
