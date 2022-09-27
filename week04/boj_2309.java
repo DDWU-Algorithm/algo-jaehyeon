@@ -17,7 +17,7 @@ public class Main
 		
         Collections.sort(heights);
 		for (int i = 0; i < 9; i++) {
-		    for (int j = 1; j < 9; j++) {
+		    for (int j = i + 1; j < 9; j++) {
 		        int a = heights.get(i);
 		        int b = heights.get(j);
 		        if (a + b == sum) {
