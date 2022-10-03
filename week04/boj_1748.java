@@ -19,7 +19,7 @@ public class Main
 		    }
 		    total += digitNum;
 		}
-	    System.out.println(total);
+	    	System.out.println(total);
 		
 		sc.close();
 	}
