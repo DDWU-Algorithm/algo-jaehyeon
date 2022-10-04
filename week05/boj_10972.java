@@ -1,4 +1,4 @@
-/** hw13 20200982 */
+/** algo_hw13 20200982 */
 
 import java.util.*;
 
@@ -16,7 +16,7 @@ public class Main
 	        next[i] = p[i];
 	    }
 	    
-      int fIndex = -1;
+       	    int fIndex = -1;
 	    for (int i = n - 1; i > 0; i--) {
 	        if (p[i - 1] < p[i]) {
 	            fIndex = i - 1;
@@ -36,13 +36,13 @@ public class Main
 	        }
 	    }
 	    
-      next[fIndex] = p[pick];
-      next[pick] = p[fIndex];
-      Arrays.sort(next, fIndex + 1, n);
+	    next[fIndex] = p[pick];
+	    next[pick] = p[fIndex];
+	    Arrays.sort(next, fIndex + 1, n);
 	    
-      for (int i = 0; i < n; i++) {
-          System.out.print(next[i] + " ");
-      }
+            for (int i = 0; i < n; i++) {
+         	System.out.print(next[i] + " ");
+     	    }
 	    
 	    sc.close();
 	}
