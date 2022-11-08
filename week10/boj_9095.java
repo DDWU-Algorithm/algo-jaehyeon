@@ -18,12 +18,13 @@ public class Main
 	        }
 	    }
 	    
-	    int[] ways = new int[max + 1];
-	    ways[1] = 1;
-	    ways[2] = 2;
-	    ways[3] = 4;
+	    int[] cnt = new int[max + 1];
+	    cnt[1] = 1;
+	    cnt[2] = 2;
+	    cnt[3] = 4;
 	    for (int i = 4; i <= max; i++) {
-	        ways[i] = ways[i - 1] + ways[i - 2] + ways[i - 3];
+	        cnt[i] = cnt[i - 1] + cnt[i - 2] + cnt[i - 3];
+										// (i - 1) + 1
 	    }
 	    
 	    for (int i = 0; i < n; i++) {
